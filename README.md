@@ -12,24 +12,24 @@ La estructura del proyecto sigue una convención común para proyectos de Machin
 
 REPO_GLADIADORES_ML/
 ├── data/
-│   ├── raw/                  # Datos brutos originales (ej. gladiator_data.csv)
-│   ├── processed/            # Datos limpios y preprocesados
-│   ├── train/                # Datos de entrenamiento
-│   ├── test/                 # Datos de prueba
-│   ├── imagenes_gladiadores/ # Conjunto de datos de imágenes para VGG16 (estructurado por clases)
-│   └── predict/              # Imágenes para pruebas de predicción manual
-├── models/                   # Modelos entrenados (RFC, VGG16, KMeans, Scaler)
-├── app_streamlit/            # Aplicación Streamlit
+│   ├── raw/                  
+│   ├── processed/            
+│   ├── train/                
+│   ├── test/                 
+│   ├── imagenes_gladiadores/ 
+│   └── predict/              
+├── models/                   
+├── app_streamlit/            
 │   └── app.py
-│   └── image_34e09b.png      # Imagen del logo/banner de la app
-├── .gitignore                # Archivos y directorios a ignorar por Git
-├── dataprocessing.py         # Script para el procesamiento de datos
-├── training.py               # Script para la división de datos de entrenamiento/prueba
-├── evaluation.py             # Script para la evaluación de múltiples modelos de clasificación
-├── main.py                   # Script principal para el modelo de clasificación (Random Forest)
-├── main_images.py            # Script para el entrenamiento y evaluación del modelo VGG16
-├── 03_Entrenamiento_Evaluacion_kmeans_NO_SUPERVISADO.ipynb # Cuaderno Jupyter para K-Means
-└── README.md                 # Este archivo
+│   └── image_34e09b.png      
+├── .gitignore                
+├── dataprocessing.py         
+├── training.py               
+├── evaluation.py             
+├── main.py                   
+├── main_images.py            
+├── 03_Entrenamiento_Evaluacion_kmeans_NO_SUPERVISADO.ipynb 
+└── README.md                 
 
 ## **Scripts y su Funcionalidad**
 
