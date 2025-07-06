@@ -1,10 +1,13 @@
-Proyecto de Predicción de Supervivencia y Clasificación de Imágenes de Gladiadores
+## **Proyecto de Predicción de Supervivencia y Clasificación de Imágenes de Gladiadores**
+
 Este repositorio contiene scripts para el procesamiento de datos, entrenamiento de modelos de Machine Learning (clasificación y clustering), y una aplicación Streamlit para predecir la supervivencia de gladiadores y clasificar imágenes.
 
-Descripción del Proyecto
+### **Descripción del Proyecto**
+
 El objetivo de este proyecto es explorar y predecir la supervivencia de gladiadores basándose en diversas características, así como clasificar imágenes para identificar si contienen gladiadores. Se utilizan técnicas de Machine Learning supervisado y no supervisado para lograr estos objetivos.
 
-Estructura del Repositorio
+### **Estructura del Repositorio**
+
 La estructura del proyecto sigue una convención común para proyectos de Machine Learning:
 
 REPO_GLADIADORES_ML/
@@ -28,38 +31,39 @@ REPO_GLADIADORES_ML/
 ├── 03_Entrenamiento_Evaluacion_kmeans_NO_SUPERVISADO.ipynb # Cuaderno Jupyter para K-Means
 └── README.md                 # Este archivo
 
-Scripts y su Funcionalidad
+## **Scripts y su Funcionalidad**
+
 A continuación, se describe la función de cada script principal en el repositorio:
 
-dataprocessing.py
+<span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">dataprocessing.py</span>
 Este script es responsable de la preparación inicial de los datos. Realiza las siguientes tareas:
 
-Carga el archivo de datos brutos (gladiator_data.csv).
+Carga el archivo de datos brutos <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">(gladiator_data.csv)</span>.
 
 Realiza limpieza de datos, manejo de valores nulos y transformaciones de características.
 
-Crea nuevas características (feature engineering), como WinLossRatio, BMI, y productos de interacción entre características.
+Crea nuevas características (feature engineering), como <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">WinLossRatio, BMI</span>, y productos de interacción entre características.
 
-Codifica variables categóricas utilizando pd.get_dummies.
+Codifica variables categóricas utilizando <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">pd.get_dummies</span>.
 
-Genera y visualiza matrices de correlación para entender las relaciones entre las características y la variable objetivo Survived.
+Genera y visualiza matrices de correlación para entender las relaciones entre las características y la variable objetivo <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">Survived</span>.
 
 Selecciona un subconjunto final de características relevantes.
 
-Guarda el DataFrame procesado en ../data/processed/gladiador_data_procesado.csv.
+Guarda el DataFrame procesado en <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">../data/processed/gladiador_data_procesado.csv</span>.
 
-training.py
+<span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">training.py</span>
 Este script se encarga de preparar los conjuntos de datos para el entrenamiento y la prueba:
 
 Carga los datos procesados.
 
-Divide el conjunto de datos en características (X) y la variable objetivo (y).
+Divide el conjunto de datos en características <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">(X)</span> y la variable objetivo <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">(y)</span>.
 
 Realiza la división de los datos en conjuntos de entrenamiento y prueba (X_train, X_test, y_train, y_test).
 
 Guarda los conjuntos de entrenamiento y prueba resultantes en archivos CSV separados en las carpetas ../data/train/ y ../data/test/ respectivamente.
 
-evaluation.py
+<span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">evaluation.py</span>
 Este script se enfoca en la evaluación comparativa y la optimización de varios modelos de clasificación:
 
 Carga los datos procesados.
@@ -68,18 +72,18 @@ Define y entrena múltiples modelos de clasificación (Bagging Classifier, Rando
 
 Evalúa el rendimiento inicial de cada modelo utilizando validación cruzada (K-Fold).
 
-Realiza la hiperparametrización utilizando GridSearchCV para encontrar los mejores parámetros para el modelo Random Forest.
+Realiza la hiperparametrización utilizando <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">GridSearchCV</span> para encontrar los mejores parámetros para el modelo Random Forest.
 
-Define un Pipeline para encapsular el escalado y el modelo, y realiza una búsqueda de hiperparámetros más exhaustiva sobre diferentes modelos y escaladores.
+Define un <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">Pipeline</span> para encapsular el escalado y el modelo, y realiza una búsqueda de hiperparámetros más exhaustiva sobre diferentes modelos y escaladores.
 
-Imprime el mejor score y el mejor estimador encontrado por GridSearchCV.
+Imprime el mejor score y el mejor estimador encontrado por <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">GridSearchCV</span>.
 
-Guarda el mejor modelo (pipeline) entrenado en ../models/best_gladiator_survival_model.pkl.
+Guarda el mejor modelo (pipeline) entrenado en <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">../models/best_gladiator_survival_model.pkl</span>.
 
-main.py
+<span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">main.py</span>
 Este script es la parte principal para la predicción de supervivencia de gladiadores:
 
-Carga el modelo RandomForestClassifier previamente entrenado.
+Carga el modelo <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">RandomForestClassifier</span> previamente entrenado.
 
 Realiza predicciones sobre el conjunto de prueba.
 
@@ -95,37 +99,37 @@ Importancia de las Características: Un gráfico de barras que muestra la influe
 
 Distribución de Probabilidades Predichas: Histograma de las probabilidades de supervivencia por clase real.
 
-Guarda el modelo rfc_model_final.pkl en la carpeta ../models/.
+Guarda el modelo <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">rfc_model_final.pkl</span> en la carpeta <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">../models/</span>.
 
-main_images.py
+<span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">main_images.py</span>
 Este script se dedica al entrenamiento y evaluación de un modelo de clasificación de imágenes:
 
 Utiliza una arquitectura VGG16 pre-entrenada para Transfer Learning.
 
-Carga un conjunto de datos de imágenes de gladiadores desde ../data/imagenes_gladiadores.
+Carga un conjunto de datos de imágenes de gladiadores desde <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">../data/imagenes_gladiadores</span>.
 
-Aplica técnicas de aumento de datos (RandomFlip, RandomRotation, RandomZoom, RandomContrast) para mejorar la robustez del modelo.
+Aplica técnicas de aumento de datos <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">(RandomFlip, RandomRotation, RandomZoom, RandomContrast)</span> para mejorar la robustez del modelo.
 
 Define y compila el modelo VGG16 con capas personalizadas para la clasificación binaria.
 
-Entrena el modelo con EarlyStopping para prevenir el sobreajuste.
+Entrena el modelo con <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">EarlyStopping</span> para prevenir el sobreajuste.
 
 Evalúa el rendimiento final del modelo en el conjunto de validación.
 
 Genera gráficos del historial de entrenamiento (precisión y pérdida a lo largo de las épocas).
 
-Guarda el modelo VGG16 entrenado como mi_modelo_VGG16.keras en la carpeta models/.
+Guarda el modelo VGG16 entrenado como <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">mi_modelo_VGG16.keras</span> en la carpeta <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">models/</span>.
 
 Incluye una función para preprocesar una sola imagen y realizar una predicción manual, mostrando el resultado y la imagen.
 
-03_Entrenamiento_Evaluacion_kmeans_NO_SUPERVISADO.ipynb
+<span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">03_Entrenamiento_Evaluacion_kmeans_NO_SUPERVISADO.ipynb</span>
 Este cuaderno de Jupyter explora el clustering no supervisado utilizando el algoritmo K-Means:
 
 Carga los datos procesados de gladiadores.
 
 Aplica el algoritmo K-Means para agrupar los datos en 2 clústeres.
 
-Realiza el escalado de características (StandardScaler) antes de aplicar K-Means, lo cual es crucial para algoritmos basados en distancia.
+Realiza el escalado de características <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">(StandardScaler)</span> antes de aplicar K-Means, lo cual es crucial para algoritmos basados en distancia.
 
 Calcula y muestra el Coeficiente de Silueta para evaluar la calidad del clustering.
 
@@ -133,10 +137,10 @@ Interpreta los clústeres mostrando los valores promedio de cada característica
 
 Visualiza la distribución de los clústeres con un gráfico de pastel y un gráfico de dispersión (Wins vs. Public Favor) coloreado por clúster y estilo por supervivencia.
 
-Guarda el modelo K-Means y el escalador utilizado en la carpeta ../models/.
+Guarda el modelo K-Means y el escalador utilizado en la carpeta <span style="background-color: #FFFF00; padding: 2px 4px; border-radius: 3px;">../models/</span>.
 
-Requisitos
-Python 3.8+
+## **Requisitos**
+* Python 3.8+
 
-Autor: Yolanda Pérez San Segundo
-Fecha: Julio 2025
+**Autor**: Yolanda Pérez San Segundo
+**Fecha**: Julio 2025
