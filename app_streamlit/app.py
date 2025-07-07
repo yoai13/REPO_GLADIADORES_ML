@@ -37,7 +37,7 @@ def set_background(color):
 st.set_page_config(layout="centered")
 
 # Llama a la función para establecer el fondo con el color deseado
-set_background("#FC7507") # Un color marrón anaranjado (Peru)
+set_background("#D8EB71") # Un color marrón anaranjado (Peru)
 
 # Título de la aplicación
 st.title('¿El Gladiador Sobrevivirá? Predicción de Supervivencia y Clasificación de Imágenes')
@@ -102,7 +102,7 @@ with st.form("gladiator_prediction_form"):
     wins = st.number_input(
         "Victorias (Wins)",
         min_value=0,
-        max_value=100,
+        max_value=25,
         value=10,
         step=1,
         help="Número total de victorias del gladiador."
